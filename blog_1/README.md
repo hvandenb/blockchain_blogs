@@ -24,8 +24,7 @@ Quick Start
 Advanced Setup
 --------------
 
-We reccomend altering the chainID and nonce in geth/data/genesis.json.
-We reccomend altering the NetworkId in geth/data/config.toml.
+We reccomend altering the chainID and nonce in geth/data/genesis.json as well as altering the NetworkId in geth/data/config.toml.
 
     cp <Your address UTC file> geth/data/keystore
     export TRUFFLE_ACCOUNT=<The address from your UTC file>
