@@ -1,0 +1,60 @@
+[Eth]
+NetworkId = 17
+SyncMode = "fast"
+LightPeers = 20
+DatabaseCache = 128
+Etherbase = "0x2df5073477c436ab6e6ea288f66ea3e82c331b3d"
+MinerThreads = 1
+GasPrice = 18000000000
+EthashCacheDir = "ethash"
+EthashCachesInMem = 2
+EthashCachesOnDisk = 3
+EthashDatasetDir = "/root/.ethash"
+EthashDatasetsInMem = 1
+EthashDatasetsOnDisk = 2
+EnablePreimageRecording = false
+
+[Eth.TxPool]
+NoLocals = false
+Journal = "transactions.rlp"
+Rejournal = 3600000000000
+PriceLimit = 1
+PriceBump = 10
+AccountSlots = 16
+GlobalSlots = 4096
+AccountQueue = 64
+GlobalQueue = 1024
+Lifetime = 10800000000000
+
+[Eth.GPO]
+Blocks = 10
+Percentile = 50
+
+[Shh]
+MaxMessageSize = 1048576
+MinimumAcceptedPOW = 2e-01
+
+[Node]
+DataDir = "/root/.ethereum"
+IPCPath = "geth.ipc"
+HTTPHost = "0.0.0.0"
+HTTPPort = 8545
+HTTPModules = ["db", "eth", "net", "web3", "personal"]
+WSPort = 8546
+WSModules = ["net", "web3", "eth", "shh"]
+
+[Node.P2P]
+MaxPeers = 25
+NoDiscovery = false
+DiscoveryV5Addr = ":30304"
+BootstrapNodes = []
+BootstrapNodesV5 = []
+StaticNodes = []
+TrustedNodes = []
+ListenAddr = ":30303"
+EnableMsgEvents = false
+
+[Dashboard]
+Host = "localhost"
+Port = 8080
+Refresh = 3000000000

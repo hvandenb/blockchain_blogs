@@ -1,0 +1,19 @@
+{
+  "name": "truffle",
+  "author": "Pythian",
+  "version": "0.0.1",
+  "description": "truffle",
+  "keywords": [
+  ],
+  "license": "UNLICENSED",
+  "scripts": {
+  },
+  "dependencies": {
+    "web3": "^1.0.0-beta.26"
+  },
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  }
+}
