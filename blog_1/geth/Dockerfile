@@ -12,21 +12,21 @@ RUN mkdir /geth
 WORKDIR /geth
 
 ADD data/genesis .
+ADD data/config.toml .
+ADD /data/create_account.sh .
 
 RUN mkdir /root/.ethereum
-
 # Add account keystore files.
 RUN mkdir -p /root/.ethereum/keystore
+
 ADD data/keystore /root/.ethereum/keystore
 
 # Initialize geth with genesis file
 RUN geth init genesis.json
+# Generate DAG to speed things up on first deploy.
+RUN geth makedag 0 ~/.ethash
 
 RUN echo ${PASSWORD} > password
-
-ADD data/config.toml .
-
-ADD /data/create_account.sh .
 
 RUN chmod +x /geth/create_account.sh && /geth/create_account.sh
 
