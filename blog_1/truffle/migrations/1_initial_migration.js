@@ -7,11 +7,9 @@ module.exports = function(deployer, network, addresses) {
 
   const config = TruffleConfig.networks[network];
 
-  console.log(config);
-
   let deploy = function(){
-    console.log('>> Deploying migration');
-    return deployer.deploy(Migrations).catch(console.error);
+    console.log('>> Deploying migrations');
+    deployer.deploy(Migrations).catch(console.error);
   }
 
   let checkBalance = function(account){
