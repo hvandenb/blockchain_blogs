@@ -8,11 +8,11 @@ module.exports = function(deployer, network, addresses) {
 
   const config = TruffleConfig.networks[network];
 
-  let deploy = function(){
-    console.log('>> Deploying migrations');
-    deployer.deploy(Migrations).catch(console.error);
-  }
+  return Unlock(web3, config, function(){
 
-  return Unlock(web3, config, deploy);
+    console.log('Deploying migrations');
+    deployer.deploy(Migrations).catch(console.error);
+
+  });
 
 };
